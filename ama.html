@@ -8,6 +8,45 @@
         body{
             background-color: cyan;;
         }
+        .divd{
+    width: 100%;
+height: 100vh;
+background-color:white;
+display: flex;
+align-items: center;
+justify-content: center;
+
+}
+
+.card{
+width: 400px;
+background: #fff;
+padding: 40px;
+border-radius: 15px;
+text-align: center;
+color: #333;
+
+}
+.im{
+    text-align: center;
+    width: 180px;
+    height: 180px;
+    border-radius: 180px;
+    
+}
+label{
+display: block;
+width: 200px;
+background-color: brown;
+color: white;
+padding: 12px;
+margin: 10px auto;
+border-radius: 5px;
+cursor: pointer;
+}
+.input-file{
+    display: none;
+}
 .jj{
     display: flex;
     justify-content:space-around;
@@ -126,7 +165,7 @@ img {vertical-align: middle;}
 @media only screen and (max-width: 300px) {
   .prev, .next,.text {font-size: 11px}
 }
-}
+
 .ah{
     color:black;
 }
@@ -190,6 +229,9 @@ top: 50%;
   display: flex;
   margin-bottom: 300px;
 }
+.calculate{
+  background-image:url(https://img.freepik.com/premium-photo/high-angle-view-pen-table_1048944-5842956.jpg?size=626&ext=jpg&ga=GA1.1.553209589.1713830400&semt=ais)
+}
 
 
 
@@ -197,9 +239,46 @@ top: 50%;
     </style>
 </head>
 <body>
+  <div class="divd">
+  <div class="information"style="margin-left: 30px">
+    <h1 > Inter your Information </h1>
+    <h2> Enter your  name <br><input type="text" placeholder="Enter your  name"></h2>
+    <h2> Enter your  number <br><input type="number" placeholder="Enter your  number"></h2>
+    <h2> Enter your  email <br><input type="email" placeholder="Enter your  email"></h2>
+    <h2> Enter your brithday <br><input type="date" placeholder="Enter your  brithday"></h2>
+    <select name="" id="">
+    <option value="Mail">Mail
+    <option value="Fmail">Fmail
+    </select>
+    <input type="checkbox">
+  </div>
+
+
+  
+    <div class="card">
+<h1 style=""> your photo <i class="fa-solid fa-arrow-turn-left-down fa-bounce" style="color: #cd070a;"></i></h1>
+
+<img class="im" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" id="profile" >
+<label for="input-file">update image </label>
+<input class="input-file" type="file" accept="image/jpeg, image/png, image/jpg"  id="input-file">
+</div>
+  </div>
+<script>
+  let profile = document.getElementById("profile");
+  
+  let inputFile = document.getElementById("input-file");
+  inputFile.onchange = function(){
+      profile.src = URL.createObjectURL(inputFile.files[0]);
+  }
+  </script>
+
+
+
+
+
 <div class="jj">
 <a href="https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwifotDfvcGFAxVYqmYCHX8PDp0YABAAGgJzbQ&ae=2&gclid=EAIaIQobChMIn6LQ373BhQMVWKpmAh1_Dw6dEAAYASAAEgIq3fD_BwE&ohost=www.google.com&cid=CAASJORorYrdQ3dTODD0wsl7_e4iCpN_ol8ZI0JHVxHdi9nHi9JUNQ&sig=AOD64_3VembheXaoyS4AqK55wMJoy9utxA&q&adurl&ved=2ahUKEwiI6MnfvcGFAxWXwjgGHez_B5sQ0Qx6BAgGEAE&nis=8&dct=1"><h1> ama<span style="color: orangered; text-align: center; "><i>Z</i></span>on</h1></a>
-<input onclick="document.getElementById('search').innerHTML=' Im happy you  are here  '" type="search" placeholder="search"; title="onclick"  class="ww"><i class="fa-solid fa-magnifying-glass fa-beat-fade" style="color: #000000;"></i>
+<input id="search" type="search" placeholder="search"; title="onclick"  class="ww"><i class="fa-solid fa-magnifying-glass fa-beat-fade" style="color: #000000;"></i>
 <h5> returns <br> &order</h5>
 <i id="count" class="fa-solid fa-cart-shopping">0</i>
 <h6>cart</h6>
@@ -224,7 +303,7 @@ top: 50%;
         <i class="fa-solid fa-star"></i>
     <h4> $20.95</h4>
     <a href="https://store.playstation.com/en-in/product/EP7550-CUSA45497_00-0242450875943629"><button style="width: 30px;"> 1</button><br><br></a>
-    <button id="btn" style="background-color: rgb(249, 230, 84); color: black; border-radius: 20px;border: none;"> add to cart </button>
+    <button id="bt" style="background-color: rgb(249, 230, 84); color: black; border-radius: 20px;border: none;"> add to cart </button>
     </div>
     <!--  -->
     <div style=" border: 1px solid black;width: 200px;text-align: center">
@@ -234,7 +313,7 @@ top: 50%;
         <i class="fa-solid fa-star"></i>
     <h4> $7.99</h4>
     <a href="https://www2.hm.com/en_in/productpage.0608945008.html"><button style="width: 30px;"> 1</button><br><br></a>
-    <button id="btn" style="background-color: rgb(249, 230, 84); color: black; border-radius: 20px;border: none;"> add to cart </button>
+    <button id="bn" style="background-color: rgb(249, 230, 84); color: black; border-radius: 20px;border: none;"> add to cart </button>
     </div>
     <!--  -->
     <div style=" border: 1px solid black;width: 200px;text-align: center">
@@ -243,7 +322,7 @@ top: 50%;
         <i class="fa-solid fa-star"></i>
     <h4> $18.99</h4>
    <a href="https://www.samsung.com/in/washers-and-dryers/washing-machines/ww5300t-front-loading-eco-bubble-ai-control-auto-dispense-7kg-gray-ww70t502nan-tl/?cid=in_pd_ppc_google_ce-samsungwm-frontload-wm-dtc_sales_samsung-wm-all-2023_eshop-pmax-pla_01jan2023-na_1ur-501464l-2024-eshop-bau-ce-performancemax-cpc_pfm--21060052523------x--WW70T502NAN%2FTL&gad_source=1&gclid=EAIaIQobChMIpIbMypTBhQMV1cZMAh0xIA9HEAQYASABEgKNKfD_BwE"> <button style="width: 30px;"> 1</button><br><br></a>
-    <button id="btn" style="background-color: rgb(249, 230, 84); color: black; border-radius: 20px;border: none;"> add to cart </button>
+    <button id="bb" style="background-color: rgb(249, 230, 84); color: black; border-radius: 20px;border: none;"> add to cart </button>
     </div>
     <!--  -->
     <div style=" border: 1px solid black;width: 200px;text-align: center">
@@ -253,7 +332,7 @@ top: 50%;
         <i class="fa-solid fa-star"></i>
     <h4> $20.</h4>
     <a href="https://www.indiamart.com/proddetail/golden-plate-3060165962.html"><button style="width: 30px;"> 1</button><br><br></a>
-    <button id="btn" style="background-color: rgb(249, 230, 84); color: black; border-radius: 20px;border: none;"> add to cart </button>
+    <button id="tn" style="background-color: rgb(249, 230, 84); color: black; border-radius: 20px;border: none;"> add to cart </button>
     </div>
 </div>
 
@@ -399,6 +478,8 @@ window.prompt("hello" + user);
 
 
 
+
+
 <div  style="margin-bottom: 0%;px;background-image: url(https://media.licdn.com/dms/image/D4E12AQGco9u8evtLFQ/article-cover_image-shrink_720_1280/0/1707835430644?e=2147483647&v=beta&t=2JsxM_HXiXkWCNu8gnw2PshtefL_KoZz0LlTKG2hYn0);" class="flip">
 <h1 style="color: blue; font-size:40px ;text-shadow: #ff3204;background-color: #ff3204;padding-left: 300px;"> flipkart</h1>
 
@@ -420,31 +501,78 @@ window.prompt("hello" + user);
 </div>
 
 
-<div class="information"style="margin-left: 30px">
-<h1 > Inter your Information </h1>
-<h2> Enter your  name <br><input type="text" placeholder="Enter your  name"></h2>
-<h2> Enter your  number <br><input type="number" placeholder="Enter your  number"></h2>
-<h2> Enter your  email <br><input type="email" placeholder="Enter your  email"></h2>
-<h2> Enter your brithday <br><input type="date" placeholder="Enter your  brithday"></h2>
-<select name="" id="">
-<option value="Mail">Mail
-<option value="Fmail">Fmail
-</select>
-<input type="checkbox">
-<video src="https://www.youtube.com/watch?v=2exKokkn8o0">
-</video>
-<a href="https://www.amazon.in/?&tag=googhydrabk1-21&ref=pd_sl_7hz2t19t5c_e&adgrpid=155259815513&hvpone=&hvptwo=&hvadid=674842289437&hvpos=&hvnetw=g&hvrand=11806934153316124982&hvqmt=e&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1007768&hvtargid=kwd-10573980&hydadcr=14453_2316415&gad_source=1"><input type="submit"></a>
-<br>
-
-</div>
-
 <script>
   var counts = 0;
 document.getElementById("btn").onclick = function(){
 counts += 1;
 document.getElementById("count").innerHTML=counts;
 }
+document.getElementById("bt").onclick=function(){
+  counts +=1;
+  document.getElementById("count").innerHTML=counts;
+}
+document.getElementById("bn").onclick=function(){
+  counts +=1;
+  document.getElementById("count").innerHTML=counts;
+}
+document.getElementById("tn").onclick=function(){
+  counts +=1;
+  document.getElementById("count").innerHTML=counts;
+}
+document.getElementById("bb").onclick=function(){
+  counts +=1;
+  document.getElementById("count").innerHTML=counts;
+}
 </script>
+ 
+
+<br><br>
+
+<div class="calculate">
+  <form name="f4">
+    <table>
+      <h1 style="color: #cd070a;"> calculate <i class="fa-solid fa-calculator fa-flip" style="color: #000000;"></i> </h1>
+      <br><br> <br><br> 
+    <tr>
+      <td> type your number <i class="fa-solid fa-arrow-right fa-beat fa-lg" style="color: #ff045c;"></i></td>
+      <td><input type="text" name="exp"></td>
+    </tr>
+    <tr>
+      <td> Results</td>
+      <td><input type="text" name="res"></td>
+    </tr>
+    <tr>
+      <td><input type="button" value="click here"onclick="math_exp()" style="background-color: #000000; color: white;"></td>
+    </tr>
+    </table>
+    </form>
+  </div>
+  
+  <script>
+  function math_exp(){
+  var x=document.f4.exp.value;
+  var Results=eval(x);
+  document.f4.res.value=Results;
+  }
+  </script>
+<script>
+var x=document.getElementById("search").onclick=function(){
+ prompt('are you want to buy somethings')
+  confirm("welcome to my shopp")
+alert('by Arbic  مرحبا بك ')
+}
+
+</script>
+
+<div>
+  <video src="https://www.youtube.com/watch?v=2exKokkn8o0">
+  </video>
+  <a href="https://www.amazon.in/?&tag=googhydrabk1-21&ref=pd_sl_7hz2t19t5c_e&adgrpid=155259815513&hvpone=&hvptwo=&hvadid=674842289437&hvpos=&hvnetw=g&hvrand=11806934153316124982&hvqmt=e&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1007768&hvtargid=kwd-10573980&hydadcr=14453_2316415&gad_source=1"><input type="submit"></a>
+  <br>
+  
+  </div>
+
+
 </body>
 <br><br><br>
 
